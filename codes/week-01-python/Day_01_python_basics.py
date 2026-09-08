@@ -390,33 +390,23 @@
 # # Mini Practice Problems
 
 # ## 1. Personal Information
-
 # # Take name and age as input and print: My name is Shubham and I am 23 years old.
 
 # ## 2. Even or Odd
-
 # # Take an integer from the user and check whether it is even or odd.
 
-
 # ## 3. Positive, Negative or Zero
-
 # # Take a number from the user and print whether it is:
-
 # # Positive
 # # Negative
 # # Zero
 
-# ## 4. Largest of Two Numbers
-
+# ## 4. Largest of Two Numbers3
 # # Take two numbers from the user and print the larger number.
 
 # ## 5. Grade Calculator
-
 # # Take marks as input and calculate the grade.
-
 # ### Rules
-
-# # text
 # # 90+      → A
 # # 75-89    → B
 # # 60-74    → C

@@ -162,40 +162,6 @@ An AI assistant that uses MCP tools to interact with databases, APIs, customers,
 **Status:** 🔴 Planned
 
 A supervisor-based multi-agent system with research, analysis, review, and human approval.
-
- 
-
-# 📅 Weekly Progress
-
-| Week | Focus                  | Status |
-|  - |        - |    |
-| 01   | Python Foundations     | ⬜      |
-| 02   | Async Python           | ⬜      |
-| 03   | API Design & FastAPI   | ⬜      |
-| 04   | LLM Foundations        | ⬜      |
-| 05   | Context Engineering    | ⬜      |
-| 06   | Context Engineering    | ⬜      |
-| 07   | Tool Calling           | ⬜      |
-| 08   | Tool Reliability       | ⬜      |
-| 09   | Agent Loops            | ⬜      |
-| 10   | LangGraph              | ⬜      |
-| 11   | Advanced LangGraph     | ⬜      |
-| 12   | Agent Frameworks       | ⬜      |
-| 13   | Memory                 | ⬜      |
-| 14   | Advanced Memory        | ⬜      |
-| 15   | Agentic RAG            | ⬜      |
-| 16   | Advanced RAG           | ⬜      |
-| 17   | MCP                    | ⬜      |
-| 18   | Integrations           | ⬜      |
-| 19   | Multi-Agent            | ⬜      |
-| 20   | Advanced Multi-Agent   | ⬜      |
-| 21   | Evals                  | ⬜      |
-| 22   | Observability          | ⬜      |
-| 23   | Production             | ⬜      |
-| 24   | Production Reliability | ⬜      |
-| 25   | Portfolio Projects     | ⬜      |
-| 26   | Final Portfolio        | ⬜      |
-
  
 
 # 🎯 Goal
@@ -212,23 +178,3 @@ By the end of these 6 months, I want to be able to:
 * Evaluate and monitor agents
 * Deploy AI applications to production
 * Build 3 portfolio-level projects
-
- 
-
-## 🔄 My Learning Cycle
-
- text
-Learn
-  ↓
-Build
-  ↓
-Document
-  ↓
-Evaluate
-  ↓
-Share
-  ↓
-Repeat
- 
-
-> **26 weeks. 3 major projects. One goal — become job-ready for Agentic AI / GenAI engineering.**
