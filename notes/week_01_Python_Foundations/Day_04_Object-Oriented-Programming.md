@@ -1,98 +1,73 @@
 # Day 4 — Object-Oriented Programming (OOP)
 
-OOP is a programming approach where we organize code using classes and objects.
-It helps us write code that is reusable, organized, and easier to maintain.
+OOP is a programming approach where code is organized using **classes and objects**.
+
+It helps make code reusable, organized, and easier to maintain.
 
 ## Topics Covered
 
-1. **Classes & Objects** — Creating classes and objects
-2. **Attributes & Methods** — Defining data and behavior
-3. **`__init__` Constructor** — Initializing objects
-4. **`self`** — Referring to the current object
-5. **Encapsulation** — Controlling access to data
-6. **Inheritance** — Reusing and extending classes
-7. **Polymorphism** — Using the same method with different behavior
-8. **Abstraction** — Hiding unnecessary implementation details
-9. **Class vs Instance Variables** — Understanding shared and object-specific data
-10. **Magic/Dunder Methods** — Understanding methods like `__str__()` and `__len__()`
-11. **Composition** — Building classes using other classes
-12. **Practical Usage** — Using OOP in APIs and AI applications
+1. **Classes & Objects**
+2. **Attributes & Methods**
+3. **`__init__()` Constructor**
+4. **`self`**
+5. **Encapsulation**
+6. **Inheritance**
+7. **Polymorphism**
+8. **Abstraction**
+9. **Class & Instance Variables**
+10. **Magic / Dunder Methods**
+11. **Composition**
+12. **OOP in AI Applications**
 
-## 1. Classes and Objects
+## 1. Classes & Objects
+
+### Class
 
 A class is a blueprint for creating objects.
 
+### Object
+
 An object is an instance of a class.
 
-```python
-class Car:
-    pass
+One class can create multiple objects.
 
-car1 = Car()
-car2 = Car()
+## 2. Attributes & Methods
+
+### Attribute
+
+Stores data inside an object.
+
+Example:
+
+```text
+name
+age
+price
 ```
 
-Here:
+### Method
 
-* `Car` is the class.
-* `car1` and `car2` are objects.
+A function defined inside a class.
 
-One class can be used to create many objects.
-
-## 2. Attributes and Methods
-
-Attributes store data.
-
-Methods define behavior.
-
-```python
-class Car:
-
-    def start(self):
-        print("Car started")
-
-
-car = Car()
-car.start()
-```
-
-Here:
-
-* `Car` → class
-* `car` → object
-* `start()` → method
+It defines the behavior of an object.
 
 ## 3. `__init__()` Constructor
 
 `__init__()` runs automatically when an object is created.
 
-It is used to initialize object data.
+It is mainly used to initialize object data.
 
 ```python
 class Student:
 
-    def __init__(self, name, age):
+    def __init__(self, name):
         self.name = name
-        self.age = age
-
-
-student = Student("Shubham", 25)
-
-print(student.name)
-print(student.age)
 ```
 
-Output:
-
-```text
-Shubham
-25
-```
-
-When we write:
+When we create:
 
 ```python
-student = Student("Shubham", 25)
+student = Student("Shubham")
 ```
 
 Python automatically calls `__init__()`.
@@ -102,88 +77,44 @@ Python automatically calls `__init__()`.
 `self` refers to the current object.
 
 ```python
-class Student:
-
-    def __init__(self, name):
-        self.name = name
+self.name
+self.age
 ```
 
-Now:
-
-```python
-student1 = Student("Rahul")
-student2 = Student("Aman")
-
-print(student1.name)
-print(student2.name)
-```
-
-Output:
+Each object gets its own values.
 
 ```text
-Rahul
-Aman
+student1.name → Rahul
+student2.name → Aman
 ```
 
-`self.name` stores the name separately for each object.
+`self` is required as the first parameter of an instance method.
 
 ## 5. Encapsulation
 
 Encapsulation means keeping data and the methods that work with that data together.
 
-Python uses `__` to indicate internal/private attributes.
+Python commonly uses:
+
+```text
+_name      → protected/internal convention
+__name     → private/name-mangled convention
+```
+
+Example:
 
 ```python
 class BankAccount:
 
     def __init__(self, balance):
         self.__balance = balance
-
-    def get_balance(self):
-        return self.__balance
-
-
-account = BankAccount(5000)
-
-print(account.get_balance())
 ```
 
-Output:
-
-```text
-5000
-```
-
-The balance is accessed through a method instead of directly.
+The balance can be accessed through a method instead of directly.
 
 ## 6. Inheritance
 
-Inheritance allows one class to reuse another class.
-
-```python
-class Vehicle:
-
-    def start(self):
-        print("Vehicle started")
-
-
-class Car(Vehicle):
-    pass
-
-
-car = Car()
-car.start()
-```
-
-Output:
-
-```text
-Vehicle started
-```
-
-`Car` inherits the `start()` method from `Vehicle`.
-
-Relationship:
+Inheritance allows one class to reuse and extend another class.
 
 ```text
 Vehicle
@@ -191,44 +122,38 @@ Vehicle
   Car
 ```
 
-## 7. Polymorphism
-
-Polymorphism means the same method can behave differently for different objects.
-
-```python
-class Dog:
-
-    def sound(self):
-        print("Bark")
-
-
-class Cat:
-
-    def sound(self):
-        print("Meow")
-
-
-dog = Dog()
-cat = Cat()
-
-dog.sound()
-cat.sound()
-```
-
-Output:
+Example relationship:
 
 ```text
-Bark
-Meow
+Car is a Vehicle
 ```
 
-Both classes have `sound()`, but the behavior is different.
+The child class can use methods from the parent class.
+
+## 7. Polymorphism
+
+Polymorphism means the same method can have different behavior for different objects.
+
+Example:
+
+```text
+Dog.sound() → Bark
+Cat.sound() → Meow
+```
+
+Both classes have the same method name:
+
+```text
+sound()
+```
+
+But the behavior is different.
 
 ## 8. Abstraction
 
 Abstraction means hiding unnecessary implementation details and exposing only what is needed.
 
-For example, when using an ATM, we only interact with:
+Example: ATM
 
 ```text
 Enter PIN
@@ -236,190 +161,111 @@ Select amount
 Withdraw money
 ```
 
-We do not need to know how the banking system works internally.
+You use the ATM without knowing how the banking system works internally.
 
-Python can implement abstraction using abstract classes.
+Python provides abstraction using **abstract classes** and the `abc` module.
 
-```python
-from abc import ABC, abstractmethod
+### Encapsulation vs Abstraction
 
+| Concept       | Meaning                        |
+| ------------- | ------------------------------ |
+| Encapsulation | Protect/control access to data |
+| Abstraction   | Hide implementation details    |
 
-class Payment(ABC):
-
-    @abstractmethod
-    def pay(self):
-        pass
-
-
-class UPI(Payment):
-
-    def pay(self):
-        print("Payment through UPI")
-```
-
-The `Payment` class defines what must be implemented, while `UPI` provides the actual implementation.
-
-## 9. Class and Instance Variables
+## 9. Class & Instance Variables
 
 ### Instance Variable
 
-An instance variable belongs to a specific object.
+Belongs to a specific object.
+
+Usually created using `self`.
 
 ```python
-class Student:
-
-    def __init__(self, name):
-        self.name = name
-
-
-student1 = Student("Rahul")
-student2 = Student("Aman")
+self.name = name
 ```
 
-Here:
+Example:
 
 ```text
 student1.name → Rahul
 student2.name → Aman
 ```
 
-Each object has its own `name`.
+Each object has its own value.
 
 ### Class Variable
 
-A class variable is shared by objects.
+Belongs to the class and is shared by objects.
 
 ```python
 class Student:
-
     college = "GEHU"
-
-    def __init__(self, name):
-        self.name = name
 ```
 
 Both objects can access:
 
-```python
+```text
 student1.college
 student2.college
 ```
 
-Result:
-
-```text
-GEHU
-GEHU
-```
-
 ## 10. Magic / Dunder Methods
 
-Dunder methods have double underscores.
+Dunder methods are special methods whose names start and end with `__`.
 
 Examples:
 
-```python
-__init__
-__str__
-__len__
-```
-
-`__str__()` controls how an object is represented as a string.
-
-```python
-class Student:
-
-    def __init__(self, name):
-        self.name = name
-
-    def __str__(self):
-        return self.name
-
-
-student = Student("Shubham")
-
-print(student)
-```
-
-Output:
-
 ```text
-Shubham
+__init__()
+__str__()
+__len__()
+__add__()
+__eq__()
+__lt__()
+__repr__()
 ```
+
+They allow objects to work with Python's built-in operations.
+
+### Common Dunder Methods
+
+| Method       | Purpose                           |
+| ------------ | --------------------------------- |
+| `__init__()` | Initialize an object              |
+| `__str__()`  | Define output for `print()`       |
+| `__len__()`  | Define behavior of `len()`        |
+| `__add__()`  | Define behavior of `+`            |
+| `__eq__()`   | Define behavior of `==`           |
+| `__lt__()`   | Define behavior of `<`            |
+| `__repr__()` | Developer-friendly representation |
 
 ## 11. Composition
 
 Composition means one class contains an object of another class.
 
-For example, a car has an engine.
+### Inheritance
 
-```python
-class Engine:
-
-    def start(self):
-        print("Engine started")
-
-
-class Car:
-
-    def __init__(self):
-        self.engine = Engine()
-
-    def start(self):
-        self.engine.start()
-        print("Car started")
-
-
-car = Car()
-car.start()
-```
-
-Output:
-
-```text
-Engine started
-Car started
-```
-
-Here, `Car` contains an `Engine` object.
-
-This is called a "has-a" relationship.
-
-Inheritance is usually an "is-a" relationship.
+**IS-A relationship**
 
 ```text
 Car is a Vehicle
+```
+
+### Composition
+
+**HAS-A relationship**
+
+```text
 Car has an Engine
 ```
 
+Composition is useful when one object uses or contains another object.
+
 ## 12. OOP in AI Applications
 
-OOP is commonly used in larger Python applications.
+OOP is useful for organizing larger AI applications.
 
-For example:
-
-```python
-class Agent:
-
-    def __init__(self, name):
-        self.name = name
-
-    def run(self, question):
-        print(f"{self.name} is processing: {question}")
-
-
-agent = Agent("Support Agent")
-
-agent.run("Where is my order?")
-```
-
-Output:
-
-```text
-Support Agent is processing: Where is my order?
-```
-
-In an Agentic AI project, we can have classes such as:
+An Agentic AI project can have classes such as:
 
 ```text
 Agent
@@ -431,7 +277,9 @@ VectorStore
 APIClient
 ```
 
-This keeps a large application organized and reusable.
+Each class can handle a specific responsibility.
+
+This makes large applications easier to organize, reuse, and maintain.
 
 ## Quick Revision
 
@@ -442,8 +290,8 @@ This keeps a large application organized and reusable.
 | Attribute     | Data stored in an object           |
 | Method        | Function inside a class            |
 | `__init__()`  | Initializes an object              |
-| `self`        | Refers to the current object       |
-| Encapsulation | Keeps data and behavior together   |
+| `self`        | Refers to current object           |
+| Encapsulation | Controls access to data            |
 | Inheritance   | Reuses another class               |
 | Polymorphism  | Same method, different behavior    |
 | Abstraction   | Hides implementation details       |
@@ -477,7 +325,7 @@ This keeps a large application organized and reusable.
 
 ## Day 4 Goal
 
-By the end of Day 4, you should understand:
+Understand:
 
 ```text
 Class
@@ -500,5 +348,3 @@ Composition
   ↓
 OOP in real applications
 ```
-
-OOP will become useful when building larger projects such as FastAPI applications, RAG systems, and Agentic AI applications.
