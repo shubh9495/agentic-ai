@@ -6,11 +6,11 @@ Follow my progress on X: [@Dev_Shubham_X](https://x.com/Dev_Shubham_X)
 
  
 
-## 🚀 Roadmap
+## Roadmap
 
 ### Stage 1 — Python & LLM Foundations
 
-* [ ] **Week 01:** Python Foundations
+* [x] **Week 01:** Python Foundations
 * [ ] **Week 02:** Async Python
 * [ ] **Week 03:** API Design & FastAPI
 * [ ] **Week 04:** LLM Foundations
