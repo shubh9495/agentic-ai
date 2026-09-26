@@ -1,180 +1,215 @@
 # agentic-ai
 
-A 6-month journey to master Agentic AI — from Python and LLM foundations to tool calling, LangGraph, memory, Agentic RAG, MCP, multi-agent systems, evaluation, and production deployment. Building, documenting, and sharing my progress every week.
+A 6-month journey to master Agentic AI — from Python and LLM foundations to tool calling, agent loops, LangGraph, memory, Agentic RAG, MCP, multi-agent systems, evaluation, and production deployment. Building, documenting, and sharing my progress every week.
 
 Follow my progress on X: [@Dev_Shubham_X](https://x.com/Dev_Shubham_X)
 
- 
+---
 
 ## Roadmap
 
-### Stage 1 — Python & LLM Foundations
+### Stage 1 — Foundations
 
 * [x] **Week 01:** Python Foundations
-* [ ] **Week 02:** Async Python
-* [ ] **Week 03:** API Design & FastAPI
-* [ ] **Week 04:** LLM Foundations
+* [ ] **Week 02:** Understand LLMs
+* [ ] **Week 03:** Build APIs Around LLMs
+* [ ] **Week 04:** Build LLM Applications
 
-**Topics:** Python, async, API design, OpenAI/Anthropic SDKs, tokens, embeddings, structured outputs.
+**Topics:** Python, LLM fundamentals, prompt engineering, LLM APIs, structured outputs, embeddings, context engineering, REST APIs, FastAPI, LLM SDKs, streaming, and application architecture.
 
- 
+---
 
-### Stage 2 — Context Engineering
+### Stage 2 — Core Agentic AI
 
-* [ ] **Week 05:** System Prompts & Few-Shot Patterns
-* [ ] **Week 06:** Context Budgets & Dynamic Context Assembly
+* [ ] **Week 05:** Tool Calling & Function Schemas
+* [ ] **Week 06:** Build Agent Loops
+* [ ] **Week 07:** Agent State & Workflows
+* [ ] **Week 08:** LangGraph
 
-**Topics:** System prompts, few-shot patterns, chain-of-thought, context budgets, dynamic context assembly.
+**Topics:** Function calling, JSON schemas, Pydantic validation, tool execution, retries, error handling, ReAct, planning, reflection, agent state, workflows, LangGraph nodes, edges, state, and checkpoints.
 
- 
+---
 
-### Stage 3 — Tool Calling & Function Schemas
+### Stage 3 — Agent Frameworks & Memory
 
-* [ ] **Week 07:** JSON Schemas & Function Calling
-* [ ] **Week 08:** Validation, Retries & Error Recovery
+* [ ] **Week 09:** Agent Frameworks
+* [ ] **Week 10:** Agent Memory
 
-**Topics:** JSON schemas, Pydantic validation, retry logic, dynamic tool discovery, error recovery.
+**Topics:** LangGraph, CrewAI, OpenAI Agents SDK, framework patterns, short-term memory, long-term memory, episodic memory, summaries, memory retrieval, and context management.
 
- 
+---
 
-### Stage 4 — Agent Loop Patterns
+### Stage 4 — Agentic RAG
 
-* [ ] **Week 09:** Agent Loops
+* [ ] **Week 11:** Agentic RAG
+* [ ] **Week 12:** Advanced RAG & Retrieval
 
-**Topics:** ReAct, plan-and-execute, reflection, self-correction, maximum iteration limits.
+**Topics:** RAG architecture, vector databases, hybrid search, reranking, query rewriting, parent-document retrieval, metadata filtering, citation tracking, and agent-driven retrieval.
 
- 
+---
 
-### Stage 5 — Agent Framework
+### Stage 5 — MCP & Integrations
 
-* [ ] **Week 10:** LangGraph Fundamentals
-* [ ] **Week 11:** Advanced LangGraph
-* [ ] **Week 12:** Framework Comparison
+* [ ] **Week 13:** MCP & Agent Integrations
+* [ ] **Week 14:** Production-Ready Tools
 
-**Topics:** LangGraph state machines, nodes, edges, CrewAI roles, OpenAI Agents SDK handoffs.
+**Topics:** MCP servers and clients, resources, prompts, tools, tool standardization, API integrations, webhooks, authentication, tool validation, error handling, and reliable external integrations.
 
- 
+---
 
-### Stage 6 — Memory Systems
+### Stage 6 — Multi-Agent Systems
 
-* [ ] **Week 13:** Short-Term & Long-Term Memory
-* [ ] **Week 14:** Memory Optimization
+* [ ] **Week 15:** Multi-Agent Systems
+* [ ] **Week 16:** Multi-Agent Orchestration
 
-**Topics:** Short-term buffers, long-term vector recall, episodic summaries, context compression.
+**Topics:** Multi-agent architecture, supervisor patterns, specialist agents, delegation, typed state handoffs, communication, routing, parallel execution, consensus, and orchestration.
 
- 
+---
 
-### Stage 7 — Agentic RAG
+### Stage 7 — Reliability & Evaluation
 
-* [ ] **Week 15:** Agentic RAG Fundamentals
-* [ ] **Week 16:** Advanced Retrieval
+* [ ] **Week 17:** Agent Reliability & Guardrails
+* [ ] **Week 18:** Agent Evaluation & Testing
 
-**Topics:** Hybrid search, reranking, parent document retrieval, query rewriting, citation tracking.
+**Topics:** Guardrails, validation, failure handling, safety boundaries, golden datasets, trajectory evaluation, LLM-as-a-judge, regression testing, test cases, and evaluation pipelines.
 
- 
+---
 
-### Stage 8 — MCP & Integrations
+### Stage 8 — Observability & Optimization
 
-* [ ] **Week 17:** MCP Servers & Clients
-* [ ] **Week 18:** Integrations & Authentication
+* [ ] **Week 19:** Agent Observability & Tracing
+* [ ] **Week 20:** Agent Performance & Cost Optimization
 
-**Topics:** MCP servers and clients, tool standardization, API connectors, webhooks, authentication.
+**Topics:** Logging, tracing, LangSmith, Langfuse, latency, token usage, caching, model selection, cost optimization, monitoring, debugging, and performance optimization.
 
- 
+---
 
-### Stage 9 — Multi-Agent Orchestration
+### Stage 9 — Production Engineering
 
-* [ ] **Week 19:** Multi-Agent Architecture
-* [ ] **Week 20:** Human-in-the-Loop & Escalation
+* [ ] **Week 21:** Production Backend & Databases
+* [ ] **Week 22:** Authentication, Security & Deployment
 
-**Topics:** Supervisor patterns, typed state handoffs, consensus logic, human-in-the-loop, escalation.
+**Topics:** FastAPI production architecture, PostgreSQL, Redis, background jobs, authentication, authorization, JWT, security, Docker, CI/CD, deployment, environment management, and production APIs.
 
- 
+---
 
-### Stage 10 — Evals & Observability
+### Stage 10 — End-to-End Agentic AI
 
-* [ ] **Week 21:** Agent Evaluation
-* [ ] **Week 22:** Observability & Tracing
+* [ ] **Week 23:** End-to-End Agentic AI Project
+* [ ] **Week 24:** Productionization & Scaling
 
-**Topics:** Golden datasets, trajectory evals, LLM-as-a-judge, LangSmith/Langfuse tracing, regression gates.
+**Topics:** System architecture, agents, tools, memory, RAG, MCP, databases, observability, evaluation, deployment, scaling, reliability, and production workflows.
 
- 
+---
 
-### Stage 11 — Production Deployment
+### Stage 11 — Career & Portfolio
 
-* [ ] **Week 23:** Docker & Deployment
-* [ ] **Week 24:** Production Reliability
+* [ ] **Week 25:** Portfolio, Resume & System Design
+* [ ] **Week 26:** Final Capstone & Interview Preparation
 
-**Topics:** Docker, CI/CD, guardrails, cost tracking, fallback chains, checkpoint and resume.
+**Goals:** Build strong portfolio projects, document architecture, write technical case studies, prepare system design, improve resume, practice Agentic AI interviews, and complete the final capstone.
 
- 
-
-### Stage 12 — Public Portfolio
-
-* [ ] **Week 25:** Portfolio Projects
-* [ ] **Week 26:** Final Portfolio & Documentation
-
-**Goals:** Ship 3 agents, publish architecture writeups, share benchmarks, and record live demos.
-
- 
+---
 
 # 📚 Learning Notes
 
 Detailed notes for each technology will be maintained separately.
 
 * [Python](./notes/python.md)
-<!-- * [Async Python](./notes/async-python.md)
-* [FastAPI](./notes/fastapi.md)
 * [LLM Foundations](./notes/llm-foundations.md)
-* [Context Engineering](./notes/context-engineering.md)
+* [API Design & FastAPI](./notes/fastapi.md)
+* [LLM Applications](./notes/llm-applications.md)
 * [Tool Calling](./notes/tool-calling.md)
 * [Agent Loops](./notes/agent-loops.md)
+* [Agent State & Workflows](./notes/agent-state.md)
 * [LangGraph](./notes/langgraph.md)
+* [Agent Frameworks](./notes/agent-frameworks.md)
 * [Memory](./notes/memory.md)
 * [Agentic RAG](./notes/agentic-rag.md)
+* [Advanced RAG](./notes/advanced-rag.md)
 * [MCP](./notes/mcp.md)
 * [Multi-Agent Systems](./notes/multi-agent.md)
+* [Guardrails & Reliability](./notes/guardrails.md)
 * [Evals](./notes/evals.md)
-* [Production](./notes/production.md) -->
+* [Observability](./notes/observability.md)
+* [Production](./notes/production.md)
 
- 
+---
 
 # 🛠️ Projects
 
-### 1. Agentic RAG
+### 1. AI Course Recommendation Assistant
+
+**Status:** 🟡 In Progress
+
+LLM-powered course recommendation system using structured outputs, embeddings, semantic search, and context engineering.
+
+---
+
+### 2. AI Course Support Agent
 
 **Status:** 🔴 Planned
 
-Agentic RAG system with query rewriting, hybrid retrieval, reranking, and citation tracking.
+A FastAPI-based AI assistant that uses LLMs, tools, retrieval, and structured outputs to answer course-related questions and recommend learning paths.
 
- 
+---
 
-### 2. MCP Business Assistant
-
-**Status:** 🔴 Planned
-
-An AI assistant that uses MCP tools to interact with databases, APIs, customers, orders, and tickets.
-
- 
-
-### 3. Multi-Agent Research System
+### 3. Agentic RAG
 
 **Status:** 🔴 Planned
 
-A supervisor-based multi-agent system with research, analysis, review, and human approval.
- 
+Agentic RAG system with query rewriting, hybrid retrieval, reranking, metadata filtering, and citation tracking.
+
+---
+
+### 4. MCP Business Assistant
+
+**Status:** 🔴 Planned
+
+An AI assistant that uses MCP tools to interact with databases, APIs, customers, orders, and support tickets.
+
+---
+
+### 5. Multi-Agent Research System
+
+**Status:** 🔴 Planned
+
+A supervisor-based multi-agent system with specialized research, analysis, review, and human approval workflows.
+
+---
 
 # 🎯 Goal
 
 By the end of these 6 months, I want to be able to:
 
 * Build LLM applications from scratch
+* Design and build production-ready APIs for AI applications
 * Build reliable tool-using agents
-* Design stateful agents with LangGraph
-* Implement agent memory
+* Design agent loops and workflows
+* Build stateful agents with LangGraph
+* Implement short-term and long-term agent memory
 * Build Agentic RAG systems
 * Build and use MCP servers
-* Design multi-agent systems
-* Evaluate and monitor agents
+* Design and orchestrate multi-agent systems
+* Build reliable agents with guardrails
+* Evaluate and test agentic systems
+* Monitor and debug agents using observability tools
+* Optimize agent performance and cost
 * Deploy AI applications to production
-* Build 3 portfolio-level projects
+* Design scalable Agentic AI architectures
+* Build portfolio-level Agentic AI projects
+* Prepare for Agentic AI and backend engineering interviews
+
+---
+
+# 🚀 Learning Philosophy
+
+The goal is not to learn frameworks without understanding the concepts behind them.
+
+The progression is:
+
+**Learn → Build → Debug → Improve → Document → Repeat**
+
+The main journey:
+
+**Python → LLMs → APIs → LLM Applications → Tools → Agents → State → LangGraph → Memory → RAG → MCP → Multi-Agent → Evaluation → Production**
