@@ -11,7 +11,7 @@ Follow my progress on X: [@Dev_Shubham_X](https://x.com/Dev_Shubham_X)
 ### Stage 1 — Foundations
 
 * [x] **Week 01:** Python Foundations
-* [ ] **Week 02:** Understand LLMs
+* [x] **Week 02:** Understand LLMs
 * [ ] **Week 03:** Build APIs Around LLMs
 * [ ] **Week 04:** Build LLM Applications
 
