@@ -11,6 +11,8 @@ from app.services.course_service import (
     delete_course
 )
 
+from app.security.auth import get_current_user
+
 
 router = APIRouter()
 
@@ -18,9 +20,13 @@ router = APIRouter()
 @router.post("/", response_model=CourseResponse)
 def create_new_course(
     course: CourseCreate,
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
+    current_user = Depends(get_current_user)
 ):
-    return create_course(db, course)
+    return create_course(
+        db,
+        course
+    )
 
 
 @router.get("/", response_model=list[CourseResponse])
@@ -52,32 +58,35 @@ def get_single_course(
 def update_existing_course(
     course_id: int,
     course_data: CourseCreate,
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
+    current_user = Depends(get_current_user)
 ):
-    course = update_course(
+    result = update_course(
         db,
         course_id,
         course_data
     )
 
-    if not course:
+    if not result:
         raise HTTPException(
             status_code= 404,
             detail="Course not found"
         )
-    return course
+    return result
 
-@router.delete("/{courss_id}")
+@router.delete("/{course_id}")
 def delete_existing_course(
     course_id: int,
-    db: Session = Depends(get_db)
-):
-    course = delete_course(db, course_id)
+    db: Session = Depends(get_db),
+    current_user = Depends(get_current_user)
 
-    if not course:
+):
+    result = delete_course(db, course_id)
+
+    if not result:
         raise HTTPException(
             status_code = 404,
-            detials = "Course not found"
+            detail = "Course not found"
         )
 
     return {

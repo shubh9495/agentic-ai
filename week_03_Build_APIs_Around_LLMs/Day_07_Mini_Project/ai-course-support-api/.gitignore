@@ -8,6 +8,7 @@
 venv/
 ENV/
 env/
+Documentation.md
 
 # Python Bytecode & Cache
 __pycache__/

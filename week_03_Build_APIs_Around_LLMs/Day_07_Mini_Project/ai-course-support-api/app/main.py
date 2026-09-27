@@ -5,6 +5,7 @@ from app.models.user import User
 from app.models.course import Course
 from app.routes import courses, auth
 
+from app.routes.ai import router as ai_router
 
 Base.metadata.create_all(bind=engine)
 
@@ -30,4 +31,10 @@ app.include_router(
     auth.router,
     prefix="/auth",
     tags=["Authentication"]
+)
+
+app.include_router(
+    ai_router,
+    prefix="/ai",
+    tags=["AI"]
 )
