@@ -12,7 +12,7 @@ Follow my progress on X: [@Dev_Shubham_X](https://x.com/Dev_Shubham_X)
 
 * [x] **Week 01:** Python Foundations
 * [x] **Week 02:** Understand LLMs
-* [ ] **Week 03:** Build APIs Around LLMs
+* [x] **Week 03:** Build APIs Around LLMs
 * [ ] **Week 04:** Build LLM Applications
 
 **Topics:** Python, LLM fundamentals, prompt engineering, LLM APIs, structured outputs, embeddings, context engineering, REST APIs, FastAPI, LLM SDKs, streaming, and application architecture.
