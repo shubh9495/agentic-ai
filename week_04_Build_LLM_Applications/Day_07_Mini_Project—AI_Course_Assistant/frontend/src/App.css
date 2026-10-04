@@ -1,0 +1,75 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #f4f5f7;
+  color: #1c1e21;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+.layout { display: grid; grid-template-columns: 320px 1fr; gap: 20px; }
+
+.panels { display: flex; flex-direction: column; gap: 20px; }
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 { margin-top: 0; font-size: 1.1rem; }
+
+.course-list { list-style: none; margin: 0; padding: 0; }
+
+.course {
+  padding: 10px;
+  border: 1px solid #e3e5e8;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.course span { font-size: 0.85rem; color: #606770; }
+.course.selected { border-color: #2563eb; background: #eff4ff; }
+
+form { display: flex; gap: 8px; flex-wrap: wrap; }
+
+input, select {
+  flex: 1;
+  min-width: 140px;
+  padding: 9px;
+  border: 1px solid #ccd0d5;
+  border-radius: 6px;
+}
+
+button {
+  padding: 9px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.answer {
+  margin-top: 12px;
+  padding: 12px;
+  background: #f7f8fa;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.error { color: #b42318; margin-top: 10px; }
+
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+}
