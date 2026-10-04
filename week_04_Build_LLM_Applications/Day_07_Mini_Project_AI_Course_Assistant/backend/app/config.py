@@ -13,5 +13,5 @@ DATABASE_URL = os.getenv(
 
 FRONTEND_ORIGIN = os.getenv(
     "FRONTEND_ORIGIN",
-    "http://localhost:5173"
+    "https://agentic-ai-fy1m.onrender.com"
 )
