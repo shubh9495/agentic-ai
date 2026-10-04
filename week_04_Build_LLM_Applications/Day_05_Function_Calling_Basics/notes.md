@@ -16,13 +16,14 @@
 * Function Calling vs Normal LLM Response
 * Common Mistakes
 * Interview Questions
+
 ---
 
 # 1. What is Function Calling?
 
 **Function calling** allows an LLM to request that a specific function in your application be executed.
 
-The LLM does not directly execute your Python function.
+The LLM does **not** directly execute your Python function.
 
 Instead:
 
@@ -44,21 +45,21 @@ LLM
 Final Response
 ```
 
-For example, a user asks:
+For example, the user asks:
 
 ```text
 "What is the weather in Dehradun?"
 ```
 
-The LLM itself may not have access to live weather data.
+The LLM may not have access to live weather data.
 
-Your application can provide a function:
+Your application can provide:
 
 ```python
 get_weather(city)
 ```
 
-The LLM can decide:
+The LLM can request:
 
 ```text
 Call get_weather
@@ -84,7 +85,7 @@ It cannot automatically:
 
 Function calling allows the LLM to interact with external systems through your application.
 
-For example:
+Example:
 
 ```text
 LLM
@@ -108,16 +109,24 @@ It is important to understand who does what.
 
 ### LLM
 
-The LLM decides **which function may be useful and what arguments to provide**.
+The LLM decides:
+
+* Which function may be useful
+* What arguments to provide
 
 ### Application
 
-Your application actually **executes the function**.
+Your application actually:
+
+* Executes the function
+* Validates the arguments
+* Handles the result
 
 Example:
 
 ```text
 User:
+
 "What is the price of course 101?"
 ```
 
@@ -189,7 +198,7 @@ A **tool** is an operation that an LLM can request through your application.
 
 A tool can be backed by a normal Python function.
 
-For example:
+Example:
 
 ```python
 def get_course(course_id: int):
@@ -228,7 +237,7 @@ The LLM needs to know:
 * Function name
 * What the function does
 * What arguments it accepts
-* The type of each argument
+* Type of each argument
 
 This information is represented using a **function schema**.
 
@@ -249,13 +258,13 @@ Conceptually:
 
 ```json
 {
-  "name": "get_weather",
-  "description": "Get the current weather for a city.",
-  "parameters": {
-    "city": {
-      "type": "string"
+    "name": "get_weather",
+    "description": "Get the current weather for a city.",
+    "parameters": {
+        "city": {
+            "type": "string"
+        }
     }
-  }
 }
 ```
 
@@ -267,7 +276,7 @@ The exact schema format depends on the LLM provider.
 
 The LLM needs information about the function before it can request it.
 
-For example:
+Example:
 
 ```text
 Function: get_course
@@ -279,7 +288,7 @@ Arguments:
 course_id → integer
 ```
 
-Now if the user asks:
+If the user asks:
 
 ```text
 "Tell me about course 10."
@@ -303,7 +312,7 @@ Without a clear schema, the model has less information about how the function sh
 
 A **tool call** is the LLM's structured request to execute a specific tool.
 
-For example:
+Example:
 
 ```text
 Tool:
@@ -315,12 +324,13 @@ Arguments:
 }
 ```
 
-The LLM is not executing the function.
+The LLM is **not executing the function**.
 
 It is saying:
 
 ```text
-"I want the application to execute get_course with course_id = 10."
+"I want the application to execute
+get_course with course_id = 10."
 ```
 
 ---
@@ -456,7 +466,7 @@ The LLM receives the result and responds:
 
 Function calling can be integrated into a FastAPI application.
 
-Example structure:
+Example architecture:
 
 ```text
 Frontend
@@ -568,8 +578,6 @@ LLM:
 "Python is a programming language..."
 ```
 
----
-
 ### Function Calling
 
 ```text
@@ -632,9 +640,13 @@ Actually executes get_course(10)
 Therefore:
 
 ```text
-LLM = Decides what tool to request
+LLM
+=
+Decides what tool to request
 
-Application = Executes the tool
+Application
+=
+Executes the tool
 ```
 
 This separation is important for security and control.
@@ -660,6 +672,7 @@ Example:
 
 ```text
 User:
+
 "Find Python courses for beginners."
 
         ↓
@@ -700,10 +713,8 @@ Example:
 
 ```python
 def get_weather(city: str):
-
     # Call weather API
     response = requests.get(...)
-
     return response.json()
 ```
 
@@ -714,6 +725,8 @@ get_weather("Dehradun")
 ```
 
 Your backend calls the weather API.
+
+Flow:
 
 ```text
 LLM
@@ -757,6 +770,7 @@ For example:
 
 ```text
 User:
+
 "Find a suitable Python course and tell me its price."
 ```
 
@@ -770,7 +784,7 @@ get_course_price()
 Final Answer
 ```
 
-You will study the complete agent loop in **Week 06**.
+The complete agent loop will be studied in **Week 06**.
 
 ---
 
@@ -822,7 +836,7 @@ Your application executes it.
 
 ---
 
-## Mistake 2: Poor function descriptions
+## Mistake 2: Poor Function Descriptions
 
 Bad:
 
@@ -840,7 +854,7 @@ Clear descriptions help the model understand when the function should be used.
 
 ---
 
-## Mistake 3: Poor argument definitions
+## Mistake 3: Poor Argument Definitions
 
 Clearly define:
 
@@ -854,13 +868,14 @@ For example:
 
 ```text
 course_id:
+
 Type → integer
 Description → Unique ID of the course
 ```
 
 ---
 
-## Mistake 4: Trusting tool arguments blindly
+## Mistake 4: Trusting Tool Arguments Blindly
 
 Tool arguments should still be validated by your application.
 
@@ -876,62 +891,10 @@ Do not assume model-generated input is always correct.
 
 ---
 
-## Mistake 5: Giving the LLM unnecessary tools
+## Mistake 5: Giving the LLM Unnecessary Tools
 
 Only expose tools that the application actually needs.
 
 Too many unrelated tools can make tool selection more difficult.
-
----
-
-# 21. Interview Questions
-
-### Q1. What is function calling?
-
-Function calling allows an LLM to request that a specific function in the application be executed using structured arguments.
-
----
-
-### Q2. Does the LLM execute the function?
-
-No.
-
-The LLM generates a tool/function request, while the application executes the actual function.
-
----
-
-### Q3. Why is function calling useful?
-
-It allows LLM applications to interact with databases, APIs, external services, and application logic.
-
----
-
-### Q4. What is a function schema?
-
-A function schema describes the function's name, purpose, arguments, and argument types so the LLM knows how the function can be used.
-
----
-
-### Q5. What is a tool call?
-
-A tool call is the structured request generated by the LLM asking the application to execute a particular tool with specific arguments.
-
----
-
-### Q6. What happens after a function is executed?
-
-The application sends the function result back to the LLM, which can use that result to generate the final response.
-
----
-
-### Q7. Can an LLM use multiple functions?
-
-Yes. An application can provide multiple tools, and the model can request the tool that is appropriate for the user's request.
-
----
-
-### Q8. How is function calling related to AI agents?
-
-Function calling provides the mechanism through which agents interact with external tools and systems.
 
 ---
