@@ -2,6 +2,17 @@
 
 A full-stack LLM application that answers questions about courses, recommends a course based on a learner's goal and level, and summarizes course content. Answers stream to the UI token by token.
 
+🚀 Live Demo
+
+Frontend:
+https://agentic-ai-fy1m.onrender.com
+
+Backend API:
+https://ai-course-assistant-api.onrender.com/docs
+
+API Health Check:
+https://ai-course-assistant-api.onrender.com/health
+
 ---
 
 ## Features
