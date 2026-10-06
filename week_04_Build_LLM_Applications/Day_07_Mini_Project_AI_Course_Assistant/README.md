@@ -34,22 +34,6 @@ https://ai-course-assistant-api.onrender.com/health
 | LLM | Gemini API (Google Gemini API, Google GenAI Python SDK, async) |
 | Hosting | Local Development
 
-## Architecture
-
-```mermaid
-flowchart LR
-    U[User] --> R[React UI]
-    R -->|HTTP / streaming| A[FastAPI routes]
-    A --> V[Pydantic validation]
-    V --> S[Course service]
-    S --> D[(Database)]
-    S --> P[Prompt templates]
-    P --> L[LLM service]
-    L -->|async / stream| C[Gemini API]
-    C --> L
-    L --> A
-    A --> R
-```
 
 Design choices:
 
